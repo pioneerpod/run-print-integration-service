@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  httpd:
+    image: pioneerpod/httpd-print
+    container_name: httpd-ps
+    ports:
+      - "8081:80"
+    volumes:
+      - "c:/var/files:/usr/local/apache2/htdocs/mtx-reporting-dev-int1.swacorp.com/jasperserver-pro/rest_v2/reports/organizations/Maintenix/Reports/Custom/Materials"
+    networks:
+      - net1
+  cups:
+    image: pioneerpod/cups
+    container_name: cupsd
+    ports:
+      - "631:631"
+    volumes:
+      - "c:/var/log/cups:/var/log/cups"
+      - "c:/var/spool/cups-pdf/ANONYMOUS:/var/spool/cups-pdf/ANONYMOUS"
+    network_mode: host
+networks:
+  net1:
+    driver: bridge
