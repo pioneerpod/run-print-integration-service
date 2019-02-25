@@ -2,7 +2,7 @@ version: '3.7'
 services:
   httpd:
     image: pioneerpod/httpd-print
-    container_name: httpd-ps
+    container_name: httpd
     ports:
       - "81:80"
     volumes:
