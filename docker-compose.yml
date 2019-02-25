@@ -4,7 +4,7 @@ services:
     image: pioneerpod/httpd-print
     container_name: httpd-ps
     ports:
-      - "8081:80"
+      - "81:80"
     volumes:
       - "c:/var/files:/usr/local/apache2/htdocs/mtx-reporting-dev-int1.swacorp.com/jasperserver-pro/rest_v2/reports/organizations/Maintenix/Reports/Custom/Materials"
     networks:
